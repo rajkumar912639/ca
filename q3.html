@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Form Values</h3>
+<form id="myForm">
+  <p>First name:</p>
+  <input id="firstName" type="text" name="firstName">
+  <p>Last name:</p>
+  <input id="lastName" type="text" name="lastName">
+</form>
+<button id="formButton">Get Values</button>
+<p id="result"></p>
+<script>
+  
+  function getValues() {
+    var form = document.getElementById("myForm");
+    var firstName = form.elements["firstName"];
+    var lastName = form.elements["lastName"];
+    
+    var firstNameValue = firstName.value;
+    var lastNameValue = lastName.value;
+    var result = document.getElementById("result");
+    result.innerHTML =
+      "First name: " + firstNameValue + "<br>" + "Last name: " + lastNameValue;
+  }
+
+  
+  var formButton = document.getElementById("formButton");
+  formButton.addEventListener("click", getValues);
+</script>
+
+</body>
+</html>

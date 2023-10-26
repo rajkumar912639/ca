@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Multiplication Table</h3>
+<p>Enter a number:</p>
+<input id="numInput" type="number" value="1">
+<button id="tableButton">write  Table</button>
+<table id="myTable"></table>
+<script>
+  
+  function createTable(num) {
+    var table = document.getElementById("myTable");
+    
+    table.innerHTML = "";
+    
+    for (var i = 1; i <= 10; i++) {
+      var row = table.insertRow();
+      var cell1 = row.insertCell();
+      var cell2 = row.insertCell();
+      var cell3 = row.insertCell();
+      cell1.innerHTML = num;
+      cell2.innerHTML = "x";
+      cell3.innerHTML = num * i;
+    }
+  }
+  var input = document.getElementById("numInput");
+  var tableButton = document.getElementById("tableButton");
+  tableButton.addEventListener("click", function() {
+    
+    var num = Number(input.value);
+    
+    createTable(num);
+  });
+</script>
+</body>
+</html>
